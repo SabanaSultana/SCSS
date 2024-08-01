@@ -1,3 +1,5 @@
+@import "var";
+
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +11,7 @@ html {
 }
 
 //variable
-$bg-color: rgb(64, 137, 220);
+// $bg-color: rgb(64, 137, 220);
 
 //mixin
 @mixin flexprob {
