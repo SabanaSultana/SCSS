@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 65%;
+}
+
+//variable
+$bg-color: rgb(64, 137, 220);
+
+//mixin
+@mixin flexprob {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@mixin commoncode {
+  letter-spacing: 0.5rem;
+}
+@mixin commoncode($param1) {
+  letter-spacing: $param1;
+}
+.main-header {
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: center;  ----------------- add instead of mixin
+  //     align-items: center;
+  //   place-items: center;
+  @include flexprob;
+  width: 100vw;
+  height: 100vh;
+  // background: cyan;
+  background: $bg-color;
+
+  // can use operator
+  // variable
+  // Nesting
+  //mixin
+  //parameter
+  //partial  /// different pages for different properties like mixin, like normal code, variables
+
+  h1 {
+    color: rgb(77, 13, 70);
+    font-size: 5rem + 5rem;
+    @include commoncode(0.7rem);
+
+    // h1:hover{
+    //     color:red;  // use & for nesting
+    // }
+    &:hover {
+      color: red;
+    }
+  }
+  p {
+    @include commoncode(1.5rem);
+    color: rgb(89, 18, 66);
+    font-size: 5rem + 5rem;
+  }
+}
